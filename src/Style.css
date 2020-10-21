@@ -1,0 +1,143 @@
+h1 {
+  color: #4c3e79;
+  font-size: 18px;
+  padding-left: 5px;
+}
+label {
+  padding-bottom: 5px;
+  color: #222222;
+}
+img {
+  height: 100%;
+  width: 100%;
+}
+.card {
+  border-radius: 2px;
+  box-shadow: 0 0 2px lightgray;
+  padding: 10px;
+  margin-top: 15px;
+  margin-right: 10px;
+  position: relative;
+}
+.card_through_text {
+  position: absolute;
+  top: -10px;
+  font-size: 13px;
+  font-weight: bold;
+  background: white;
+
+  color: #222222;
+}
+.inputBox {
+  border: 0;
+  border-bottom: 1px solid lightgray;
+  border-radius: 1px;
+  height: 20px;
+  font-size: 13px;
+  color: #333333;
+  width: 98%;
+
+  box-shadow: none;
+  padding-left: 0px;
+  margin-top: 15px;
+}
+.form-control {
+  margin-bottom: 20px;
+}
+.error {
+  color: red;
+}
+
+.form {
+  display: flex;
+  padding: 10px 10px;
+  flex-wrap: wrap;
+}
+.row2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-size: 10px;
+  padding: 5px;
+  margin: 5px;
+}
+
+textarea {
+  resize: none;
+  box-shadow: 0 0 1px darkgray;
+  border: 1px black;
+  border-radius: 1px;
+  overflow: hidden;
+  width: 100%;
+  outline: none;
+}
+.description {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px;
+  margin: 5px;
+  margin-right: 0px;
+}
+.visible_eye {
+  position: relative;
+}
+.visible_eye_logo2 {
+  height: 15px;
+  width: 15px;
+  top: 15px;
+  right: 2px;
+  position: absolute;
+  cursor: pointer;
+}
+.button_row {
+  display: flex;
+  padding: 10px;
+  flex-direction: row;
+  justify-content: center;
+}
+.button {
+  background-color: #4c3e79;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 5x;
+  margin: 7px 5px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 20px;
+  font-weight: bold;
+}
+.button1 {
+  background-color: white;
+  color: #4c3e79;
+  border: 2px solid #4c3e79;
+}
+
+.button1:hover {
+  background-color: #4c3e79;
+  color: white;
+}
+
+@media (min-width: 699px) {
+  .ImageLogo {
+    display: none;
+  }
+}
+@media (max-width: 1029px) {
+  .ImageLogo {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 0 4px black;
+  }
+
+  textarea {
+    height: 150px;
+  }
+}
