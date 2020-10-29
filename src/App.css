@@ -132,19 +132,15 @@ textarea {
   position: absolute;
   cursor: pointer;
 }
-
-@media screen and (max-width: 700px) {
+/*for Mobile view*/
+@media screen and (max-width: 600px) {
   .logoImage {
     position: absolute;
     width: 49.99999%;
   }
-  .allrows {
-    display: flex;
+
+  .row1 {
     flex-direction: column;
-    font-size: 15px;
-    color: #222222;
-    padding: 5px;
-    margin: 5px;
   }
   form {
     position: relative;
@@ -152,8 +148,30 @@ textarea {
     top: 450px;
   }
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .logoImage {
     width: 100%;
   }
 }
+/* for tablet mode*/
+/*@media only screen and (min-width: 700px) {
+  .logoImage {
+    position: absolute;
+    width: 49.99999%;
+  }
+
+  .row1 {
+    flex-direction:row;
+  }
+  form {
+    position: relative;;
+
+    left: 650px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .logoImage {
+    width: 100%;
+    height: 80%;
+  }
+}*/

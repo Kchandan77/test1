@@ -10,7 +10,7 @@ export class App extends Component {
     return (
       <div>
 
-        {/*<LoginForms />*/ }{/*This is for webview*/}
+        {<LoginForms /> }{/*This is for webview*/}
         {/*<MobileView/>*/}{/*This is for mobileview*/}
       </div>
     )

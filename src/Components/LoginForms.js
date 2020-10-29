@@ -5,6 +5,8 @@ import eyelogo from '../Assets/see_password_icon.png'
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
+const ageRegex = RegExp(/^([1][8-9]|[2-5][0-9]|[6][0-5])$/)
+const mobileRegex = RegExp(/^\d{10}$/)
 
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
@@ -22,7 +24,9 @@ const formValid = ({ formErrors, ...rest }) => {
   return valid;
 };
 
+
 class LoginForms extends Component {
+
 
   constructor(props) {
     super(props);
@@ -84,12 +88,14 @@ class LoginForms extends Component {
           value.length < 3 ? "minimum 3 characaters required" : "";
         break;
       case "age":
-        formErrors.age =
-          value.length < 2 ? "age must in between 18 to 100" : "";
+        formErrors.age = ageRegex.test(value)
+          ? "" : "age must in between 18 to 100"
+
         break;
       case "mobileNumber":
-        formErrors.mobileNumber =
-          value.length < 10 ? "Mobile number must be a 10 digit number" : "";
+        formErrors.mobileNumber = mobileRegex.test(value)
+          ? "" : "Mobile number must be a 10 digit number"
+
         break;
       case "email":
         formErrors.email = emailRegex.test(value)
@@ -148,21 +154,21 @@ class LoginForms extends Component {
     })
   }
 
-  handlePassWordVisibility = (event) => {
-    const { passwordShown, setPasswordShown } = this.state;
-    setPasswordShown(passwordShown ? false : true);
-  }
-  agehandler = (event) => {
+  /* handlePassWordVisibility = (event) => {
+     const { passwordShown, setPasswordShown } = this.state;
+     setPasswordShown(passwordShown ? false : true);
+   }*/
+  /*agehandler = (event) => {
     this.setState({
       age: event.target.value
     })
-  }
+  }*/
 
-  mobilehandler = (event) => {
+  /*mobilehandler = (event) => {
     this.setState({
       mobileNumber: event.target.value
     })
-  }
+  }*/
 
   render() {
     const { formErrors } = this.state;
@@ -177,7 +183,7 @@ class LoginForms extends Component {
               <div className="allrows firstname">
                 <label htmlFor="firstName">First Name</label>
                 <input
-                  className={formErrors.firstName.length > 0 ? "error" : null}
+                  className={formErrors.firstName.length > 0 ? "error" : ""}
                   placeholder="First Name"
                   type="text"
                   name="firstName"
@@ -205,11 +211,10 @@ class LoginForms extends Component {
               <div className="allrows age">
                 <label htmlFor="age">Age</label>
                 <input
-                  className={formErrors.age.length > 2 ? "error" : 100}
-                  placeholder="18-20"
+                  className={formErrors.age.length > 0 ? "error" : ""}
+                  placeholder="18-100"
                   type="number"
-                  value={this.state.age} min="18" max="100"
-                  pattern="[-+]?[0-9]"
+                  value={this.state.age}
                   name="age"
                   noValidate
                   /*onChange={this.agehandler} */
@@ -225,7 +230,7 @@ class LoginForms extends Component {
               <div className="allrows mobile">
                 <label htmlFor="mobileNumber">Mobile Number</label>
                 <input
-                  className={formErrors.mobileNumber.length > 0 ? "error" : null}
+                  className={formErrors.mobileNumber.length > 0 ? "error" : 10}
                   placeholder="xxxxx xxxxx"
                   type="number"
                   name="mobileNumber"
